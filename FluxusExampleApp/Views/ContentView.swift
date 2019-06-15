@@ -3,7 +3,7 @@ import Fluxus
 
 struct ContentView: View {
   @EnvironmentObject var store: FluxStore
-  @EnvironmentObject var getters: AppRootGetter
+  @EnvironmentObject var getters: AppRootGetters
   @EnvironmentObject var counterState: CounterState
 
   var body: some View {
@@ -29,7 +29,7 @@ struct ContentView_Previews : PreviewProvider {
     let committer = AppRootCommitter()
     let dispatcher = AppRootDispatcher()
     let store = FluxStore(withState: state, withCommitter: committer, withDispatcher: dispatcher)
-    let getters = AppRootGetter(withState: state)
+    let getters = AppRootGetters(withState: state)
 
     return ContentView()
       .environmentObject(store)

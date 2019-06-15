@@ -19,7 +19,7 @@
 		521DA34422B2E7C400DB5BBF /* CounterMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34322B2E7C400DB5BBF /* CounterMutation.swift */; };
 		521DA34622B2E7E500DB5BBF /* AppRootCommitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34522B2E7E500DB5BBF /* AppRootCommitter.swift */; };
 		521DA34822B2E80000DB5BBF /* CounterCommitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34722B2E80000DB5BBF /* CounterCommitter.swift */; };
-		521DA34A22B2E82800DB5BBF /* AppRootGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34922B2E82800DB5BBF /* AppRootGetter.swift */; };
+		521DA34A22B2E82800DB5BBF /* AppRootGetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34922B2E82800DB5BBF /* AppRootGetters.swift */; };
 		521DA34C22B2E84400DB5BBF /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34B22B2E84400DB5BBF /* CounterAction.swift */; };
 		521DA34E22B2E86300DB5BBF /* AppRootDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34D22B2E86300DB5BBF /* AppRootDispatcher.swift */; };
 		521DA35022B2E87B00DB5BBF /* CounterDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA34F22B2E87B00DB5BBF /* CounterDispatcher.swift */; };
@@ -39,7 +39,7 @@
 		521DA34322B2E7C400DB5BBF /* CounterMutation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterMutation.swift; sourceTree = "<group>"; };
 		521DA34522B2E7E500DB5BBF /* AppRootCommitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootCommitter.swift; sourceTree = "<group>"; };
 		521DA34722B2E80000DB5BBF /* CounterCommitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCommitter.swift; sourceTree = "<group>"; };
-		521DA34922B2E82800DB5BBF /* AppRootGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootGetter.swift; sourceTree = "<group>"; };
+		521DA34922B2E82800DB5BBF /* AppRootGetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootGetters.swift; sourceTree = "<group>"; };
 		521DA34B22B2E84400DB5BBF /* CounterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
 		521DA34D22B2E86300DB5BBF /* AppRootDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootDispatcher.swift; sourceTree = "<group>"; };
 		521DA34F22B2E87B00DB5BBF /* CounterDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDispatcher.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		521DA33B22B2E6D600DB5BBF /* Getters */ = {
 			isa = PBXGroup;
 			children = (
-				521DA34922B2E82800DB5BBF /* AppRootGetter.swift */,
+				521DA34922B2E82800DB5BBF /* AppRootGetters.swift */,
 			);
 			path = Getters;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 				521DA34C22B2E84400DB5BBF /* CounterAction.swift in Sources */,
 				521DA34622B2E7E500DB5BBF /* AppRootCommitter.swift in Sources */,
 				521DA34822B2E80000DB5BBF /* CounterCommitter.swift in Sources */,
-				521DA34A22B2E82800DB5BBF /* AppRootGetter.swift in Sources */,
+				521DA34A22B2E82800DB5BBF /* AppRootGetters.swift in Sources */,
 				521DA35022B2E87B00DB5BBF /* CounterDispatcher.swift in Sources */,
 				521DA32522B2E59400DB5BBF /* ContentView.swift in Sources */,
 				521DA33D22B2E71C00DB5BBF /* AppRootState.swift in Sources */,
