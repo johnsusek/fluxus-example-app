@@ -5,7 +5,11 @@ import Fluxus
 final class RootStore: BindableObject {
   var didChange = PassthroughSubject<RootStore, Never>()
 
-  var state = RootState()
+  var state = RootState() {
+    didSet {
+      didChange.send(self)
+    }
+  }
 
   func commit(_ mutation: Mutation) {
     switch mutation {
@@ -14,8 +18,6 @@ final class RootStore: BindableObject {
     default:
       print("Unknown mutation type!")
     }
-
-    didChange.send(self)
   }
 
   func dispatch(_ action: Action) {
