@@ -1,22 +1,27 @@
 import SwiftUI
-import Fluxus
 
-struct ContentView: View {
-  @EnvironmentObject var store: FluxStore
-  @EnvironmentObject var getters: AppRootGetters
-  @EnvironmentObject var counterState: CounterState
+struct ContentView : View {
+  @EnvironmentObject var store: RootStore
 
   var body: some View {
     VStack {
-      Text("Count: \(counterState.count)")
-        .color(getters.countIsEven ? .orange : .green)
+      Text("Count: \(store.state.counter.count)")
+        .color(store.state.counter.countIsDivisibleBy(3) ? .orange : .green)
 
       Button(action: { self.store.commit(CounterMutation.Increment) }) {
         Text("Increment")
       }
 
+      Button(action: { self.store.commit(CounterMutation.AddAmount(5)) }) {
+        Text("Increment by amount (5)")
+      }
+
       Button(action: { self.store.dispatch(CounterAction.IncrementRandom) }) {
-        Text("Increment Random (Async)")
+        Text("Increment random")
+      }
+
+      Button(action: { self.store.dispatch(CounterAction.IncrementRandomWithRange(20)) }) {
+        Text("Increment random with range (20)")
       }
     }
   }
@@ -25,16 +30,8 @@ struct ContentView: View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
   static var previews: some View {
-    let state = AppRootState()
-    let committer = AppRootCommitter()
-    let dispatcher = AppRootDispatcher()
-    let store = FluxStore(withState: state, withCommitter: committer, withDispatcher: dispatcher)
-    let getters = AppRootGetters(withState: state)
-
-    return ContentView()
-      .environmentObject(store)
-      .environmentObject(getters)
-      .environmentObject(state.counterState)
+    let store = RootStore()
+    return ContentView().environmentObject(store)
   }
 }
 #endif

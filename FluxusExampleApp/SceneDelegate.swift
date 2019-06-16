@@ -8,16 +8,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     let window = UIWindow(frame: UIScreen.main.bounds)
 
-    let state = AppRootState()
-    let committer = AppRootCommitter()
-    let dispatcher = AppRootDispatcher()
-    let store = FluxStore(withState: state, withCommitter: committer, withDispatcher: dispatcher)
-    let getters = AppRootGetters(withState: state)
-
-    window.rootViewController = UIHostingController(rootView: ContentView()
-      .environmentObject(store)
-      .environmentObject(getters)
-      .environmentObject(state.counterState))
+    let store = RootStore()
+    window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(store))
 
     self.window = window
     window.makeKeyAndVisible()
