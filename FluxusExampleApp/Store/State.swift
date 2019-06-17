@@ -3,6 +3,8 @@ import Fluxus
 struct CounterState: FluxState {
   var count = 0
 
+  var myBoolBinding = false
+
   var countIsEven: Bool {
     get {
       return count % 2 == 0
