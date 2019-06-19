@@ -33,17 +33,17 @@ struct ContentView : View {
         }
 
         // Use with bindings
-        Toggle(isOn: myToggleValue) {
-          Text("My boolean is: \(myToggleValue.value ? "true" : "false")")
+        Toggle(isOn: myToggleBinding) {
+          Text("My boolean is: \(myToggleBinding.value ? "true" : "false")")
         }
       }.navigationBarTitle(Text("Fluxus Example"))
     }
   }
 
   // Commit a mutation with a binding
-  var myToggleValue = Binding<Bool> (
+  var myToggleBinding = Binding<Bool> (
     getValue: {
-      rootStore.state.counter.myBoolBinding
+      rootStore.state.counter.myBoolValue
   },
     setValue: { value in
       rootStore.commit(CounterMutation.SetMyBool(value))
