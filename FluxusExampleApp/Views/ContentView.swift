@@ -32,20 +32,28 @@ struct ContentView : View {
           }
         }
 
-        // Use with control bindings
-        Toggle(isOn: $store.state.counter.myBoolBinding) {
-          Text("My boolean is: \(store.state.counter.myBoolBinding ? "true" : "false")")
+        // Use with bindings
+        Toggle(isOn: myToggleValue) {
+          Text("My boolean is: \(myToggleValue.value ? "true" : "false")")
         }
       }.navigationBarTitle(Text("Fluxus Example"))
     }
   }
+
+  // Commit a mutation with a binding
+  var myToggleValue = Binding<Bool> (
+    getValue: {
+      rootStore.state.counter.myBoolBinding
+  },
+    setValue: { value in
+      rootStore.commit(CounterMutation.SetMyBool(value))
+  })
 }
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
   static var previews: some View {
-    let store = RootStore()
-    return ContentView().environmentObject(store)
+    return ContentView().environmentObject(rootStore)
   }
 }
 #endif

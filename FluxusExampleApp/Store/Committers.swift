@@ -9,6 +9,8 @@ struct CounterCommitter: Committer {
       state.count += 1
     case .AddAmount(let amount):
       state.count += amount
+    case .SetMyBool(let value):
+      state.myBoolBinding = value
     }
 
     return state
