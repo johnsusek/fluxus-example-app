@@ -8,7 +8,7 @@ struct ContentView : View {
       Form {
         // Read the count from the store, and use a getter function to decide color
         Text("Count: \(store.state.counter.count)")
-          .color(store.state.counter.countIsDivisibleBy(3) ? .orange : .green)
+          .foregroundColor(store.state.counter.countIsDivisibleBy(3) ? .orange : .green)
 
         Section {
           // Commit a mutation without a param
@@ -34,7 +34,7 @@ struct ContentView : View {
 
         // Use with bindings
         Toggle(isOn: myToggleBinding) {
-          Text("My boolean is: \(myToggleBinding.value ? "true" : "false")")
+          Text("My boolean is: \(myToggleBinding.wrappedValue ? "true" : "false")")
         }
       }.navigationBarTitle(Text("Fluxus Example"))
     }
@@ -42,10 +42,10 @@ struct ContentView : View {
 
   // Commit a mutation with a binding
   var myToggleBinding = Binding<Bool> (
-    getValue: {
-      rootStore.state.counter.myBoolValue
+    get: {
+        rootStore.state.counter.myBoolValue
   },
-    setValue: { value in
+    set: { value in
       rootStore.commit(CounterMutation.SetMyBool(value))
   })
 }

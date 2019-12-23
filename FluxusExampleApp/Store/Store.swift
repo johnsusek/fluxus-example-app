@@ -4,14 +4,9 @@ import Fluxus
 
 let rootStore = RootStore()
 
-final class RootStore: BindableObject {
-  var didChange = PassthroughSubject<RootStore, Never>()
+final class RootStore: ObservableObject {
 
-  var state = RootState() {
-    didSet {
-      didChange.send(self)
-    }
-  }
+  @Published var state = RootState()
 
   func commit(_ mutation: Mutation) {
     switch mutation {
